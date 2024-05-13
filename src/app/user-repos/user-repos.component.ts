@@ -10,6 +10,9 @@ export class UserReposComponent {
 
   userRepos:any = []
   errorFlag:boolean = false
+  page: number = 1
+  itemsPerPage = 10;
+  totalItems : any;
 
   constructor(private api:ApiService){}
 
@@ -17,7 +20,8 @@ export class UserReposComponent {
     this.api.getUserReposAPI(userid).subscribe({
       next:(result:any)=>{
         this.userRepos = result
-        console.log(result);
+        this.page = 0
+        // console.log(result);
       },
       error:(reason:any)=>{
         this.errorFlag = true

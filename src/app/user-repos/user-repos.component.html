@@ -1,4 +1,4 @@
-<div class="p-4 ">
+<div *ngIf="userRepos.length!=0" class="p-4">
     <!-- public repo heading -->
     <div class="flex justify-between pt-2 border-solid border-0 border-b border-slate-300">
         <div class="p-2 border-solid border-0 border-b border-blue-300">
@@ -7,16 +7,19 @@
         <button class="w-12 h-12 p-2 mb-2 bg-blue-400 rounded-full text-white"><i class="fa-solid fa-folder"></i></button>
     </div>
 
-    <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-2">
-        <!-- repository card -->
-        <div class="max-w-xl bg-white p-3 rounded-lg">
-            <p class="text-blue-400 font-medium">Repository name</p>
-            <p class="mt-2 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum, sint iure porro consequuntur, itaque amet</p>
-            <div class="flex mt-3">
-                <button class=" me-2 mb-2 p-1 bg-slate-50 rounded-md">
-                    <p class="text-xs font-semibold text-slate-600">#React</p>
-                </button>
-            </div>
-        </div>  
+    <div>
+        <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <!-- repository card -->
+            <div *ngFor="let repo of userRepos" class="max-w-xl bg-white p-3 rounded-lg">
+                <p class="text-blue-400 font-medium">{{repo.name}}</p>
+                <p class="mt-2 text-sm">{{repo.description}}</p>
+                <div class="flex flex-wrap mt-3">
+                    <button *ngFor="let topic of repo.topics" class="me-2 mb-2 p-1 bg-slate-50 rounded-md">
+                        <p class="text-xs font-semibold text-slate-600">#{{topic}}</p>
+                    </button>
+                </div>
+            </div>  
+        </div>
     </div>
+    
 </div>

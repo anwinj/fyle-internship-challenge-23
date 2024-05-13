@@ -17,12 +17,12 @@ export class UserDetailsComponent {
     this.api.getUserDetailsAPI(userid).subscribe({
       next:(result:any)=>{
         this.userDetails = result
-        console.log(result);
+        // console.log(result);
       },
       error:(reason:any)=>{
         this.userDetails = []
         this.errorFlag = true
-        console.log(reason);
+        // console.log(reason);
       }
     })
   }

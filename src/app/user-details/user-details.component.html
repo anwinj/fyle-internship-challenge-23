@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center">
+<div *ngIf="userDetails.length!=0" class="flex flex-col items-center">
     <img *ngIf="userDetails.avatar_url" src={{userDetails.avatar_url}} [width]="100" height="100" class=" mt-10 rounded-full shadow-lg" alt="user image">
     <img *ngIf="!userDetails.avatar_url" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1713182640~exp=1713186240~hmac=9b2c5c7760ff740cd26b7a096a3d13767bd115febc32075094353e6f67c201c6&w=740" [width]="100" height="100" class=" mt-10 rounded-full shadow-lg" alt="user image">
         
@@ -24,4 +24,9 @@
         <p class="font-bold text-center">Bio</p>
         <p class="text-sm mt-2 text-center">{{userDetails.bio}}</p>
     </div>
+</div>
+
+<div *ngIf="userDetails.length==0" class="mt-10 flex flex-col items-center">
+    <img class="w-56" src="./../../assets/search.png" alt="">
+    <p class="text-sm lg:w-60 text-slate-500">Search with your correct <span class="font-bold">Github UserId</span> to get details</p>
 </div>

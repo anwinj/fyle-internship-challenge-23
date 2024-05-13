@@ -6,6 +6,8 @@ import { HttpClientModule } from  '@angular/common/http';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserReposComponent } from './user-repos/user-repos.component';
 import { FormsModule } from '@angular/forms';
+import { NgToastModule } from 'ng-angular-popup'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgToastModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
